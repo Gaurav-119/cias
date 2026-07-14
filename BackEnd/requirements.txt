@@ -1,0 +1,33 @@
+# Core API
+Flask==3.0.3
+Flask-Cors==4.0.1
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.7
+SQLAlchemy==2.0.34
+# Alembic is installed transitively by Flask-Migrate (migrations)
+
+# Database
+psycopg2-binary==2.9.9
+
+# Auth
+PyJWT==2.9.0
+bcrypt==4.2.0
+
+# Config / HTTP
+python-dotenv==1.0.1
+requests==2.32.3
+
+# Production server
+gunicorn==23.0.0
+
+# Object storage (MinIO default in Docker; boto3 for optional S3 provider)
+minio==7.2.8
+boto3==1.35.24
+
+# Policy PDF certificates
+reportlab==4.2.2
+qrcode==7.4.2
+Pillow>=10.0.0
+
+# Optional Stripe checkout (PAYMENT_MODE=stripe)
+stripe==10.12.0

@@ -1,0 +1,66 @@
+brand,model,variant,fuel_type,transmission,body_type,segment,manufacturing_start_year,manufacturing_end_year,engine_cc,ex_showroom_price,currency,is_active
+Hyundai,Grand i10 Nios,E,Petrol,Manual,Hatchback,Mid,2020,,1197,599000,INR,true
+Hyundai,Grand i10 Nios,Sportz,Petrol,Manual,Hatchback,Mid,2020,,1197,749000,INR,true
+Hyundai,Grand i10 Nios,Asta,Petrol,AMT,Hatchback,Mid,2020,,1197,849000,INR,true
+Hyundai,i20,Magna,Petrol,Manual,Hatchback,Mid,2020,,1197,699000,INR,true
+Hyundai,i20,Sportz,Petrol,Manual,Hatchback,Mid,2020,,1197,849000,INR,true
+Hyundai,i20,Asta,Petrol,AMT,Hatchback,Mid,2020,,1197,999000,INR,true
+Hyundai,Aura,E,Petrol,Manual,Hatchback,Mid,2020,,1197,649000,INR,true
+Hyundai,Aura,S,Petrol,AMT,Hatchback,Mid,2020,,1197,899000,INR,true
+Hyundai,Venue,E,Petrol,Manual,SUV,Mid,2020,,1197,899000,INR,true
+Hyundai,Venue,S,Petrol,Manual,SUV,Mid,2020,,1197,1049000,INR,true
+Hyundai,Venue,SX,Petrol,AMT,SUV,Mid,2020,,1197,1249000,INR,true
+Hyundai,Verna,EX,Petrol,Manual,Hatchback,Mid,2020,,1197,1099000,INR,true
+Hyundai,Verna,SX,Petrol,Automatic,Hatchback,Mid,2020,,1197,1499000,INR,true
+Hyundai,Creta,E,Petrol,Manual,SUV,Mid,2020,,1197,1099000,INR,true
+Hyundai,Creta,EX,Petrol,Manual,SUV,Mid,2020,,1197,1249000,INR,true
+Hyundai,Creta,S,Diesel,Manual,SUV,Mid,2020,,1493,1349000,INR,true
+Hyundai,Creta,SX,Petrol,Automatic,SUV,Mid,2020,,1197,1749000,INR,true
+Hyundai,Creta,SX(O),Petrol,Automatic,SUV,Mid,2020,,1197,1999000,INR,true
+Hyundai,Alcazar,Prestige,Petrol,Automatic,SUV,Mid,2020,,1197,1699000,INR,true
+Hyundai,Alcazar,Signature,Diesel,Automatic,SUV,Mid,2020,,1493,2099000,INR,true
+Hyundai,Tucson,Signature,Petrol,Automatic,SUV,Mid,2020,,1197,2799000,INR,true
+Hyundai,Exter,EX,Petrol,Manual,SUV,Mid,2020,,1197,849000,INR,true
+Hyundai,Exter,SX,Petrol,AMT,SUV,Mid,2020,,1197,999000,INR,true
+Maruti Suzuki,Swift,LXi,Petrol,Manual,Hatchback,Compact,2018,,1197,649000,INR,true
+Maruti Suzuki,Swift,VXi,Petrol,Manual,Hatchback,Compact,2018,,1197,749000,INR,true
+Maruti Suzuki,Swift,ZXi,Petrol,AMT,Hatchback,Compact,2018,,1197,949000,INR,true
+Maruti Suzuki,Baleno,Sigma,Petrol,Manual,Hatchback,Compact,2018,,1197,699000,INR,true
+Maruti Suzuki,Baleno,Delta,Petrol,Manual,Hatchback,Compact,2018,,1197,799000,INR,true
+Maruti Suzuki,Baleno,Alpha,Petrol,AMT,Hatchback,Compact,2018,,1197,999000,INR,true
+Maruti Suzuki,Brezza,LXi,Petrol,Manual,SUV,Compact,2018,,1197,899000,INR,true
+Maruti Suzuki,Brezza,VXi,Petrol,Manual,SUV,Compact,2018,,1197,1049000,INR,true
+Maruti Suzuki,Brezza,ZXi,Petrol,Automatic,SUV,Compact,2018,,1197,1399000,INR,true
+Maruti Suzuki,Fronx,Sigma,Petrol,Manual,SUV,Compact,2018,,1197,799000,INR,true
+Maruti Suzuki,Fronx,Delta,Petrol,AMT,SUV,Compact,2018,,1197,999000,INR,true
+Maruti Suzuki,Ertiga,LXi,Petrol,Manual,MPV,Compact,2018,,1197,949000,INR,true
+Maruti Suzuki,Ertiga,VXi,Petrol,Manual,MPV,Compact,2018,,1197,1099000,INR,true
+Tata,Nexon,Smart,Petrol,Manual,SUV,Mid,2019,,0,799000,INR,true
+Tata,Nexon,Smart+,Petrol,Manual,SUV,Mid,2019,,0,949000,INR,true
+Tata,Nexon,Fearless,Electric,Automatic,SUV,Mid,2019,,0,1499000,INR,true
+Tata,Punch,Pure,Petrol,Manual,SUV,Mid,2019,,0,649000,INR,true
+Tata,Punch,Adventure,Petrol,AMT,SUV,Mid,2019,,0,899000,INR,true
+Tata,Harrier,Smart,Diesel,Manual,SUV,Mid,2019,,0,1549000,INR,true
+Tata,Harrier,Fearless,Diesel,Automatic,SUV,Mid,2019,,0,2299000,INR,true
+Tata,Safari,Smart,Diesel,Manual,SUV,Mid,2019,,0,1649000,INR,true
+Tata,Safari,Accomplished,Diesel,Automatic,SUV,Mid,2019,,0,2499000,INR,true
+Toyota,Innova Crysta,GX,Diesel,Manual,MPV,Premium,2016,,2393,1999000,INR,true
+Toyota,Fortuner,4x2 AT,Diesel,Automatic,SUV,Premium,2016,,2755,3499000,INR,true
+Honda,City,V,Petrol,Manual,Sedan,Mid,2020,,1498,1249000,INR,true
+Honda,Amaze,VX,Petrol,CVT,Sedan,Compact,2018,,1199,999000,INR,true
+Kia,Seltos,HTK,Petrol,Manual,SUV,Mid,2019,,1497,1099000,INR,true
+Kia,Seltos,HTX,Diesel,Automatic,SUV,Mid,2019,,1493,1799000,INR,true
+Kia,Sonet,HTK,Petrol,Manual,SUV,Compact,2020,,1197,799000,INR,true
+MG,Hector,Style,Petrol,Manual,SUV,Mid,2019,,1451,1299000,INR,true
+MG,Astor,Sharp,Petrol,CVT,SUV,Mid,2021,,1349,1699000,INR,true
+Volkswagen,Virtus,Comfortline,Petrol,Manual,Sedan,Mid,2022,,999,1199000,INR,true
+Skoda,Slavia,Ambition,Petrol,Manual,Sedan,Mid,2022,,999,1249000,INR,true
+Renault,Kiger,RXE,Petrol,Manual,SUV,Compact,2021,,999,649000,INR,true
+Nissan,Magnite,XE,Petrol,Manual,SUV,Compact,2020,,999,649000,INR,true
+Jeep,Compass,Sport,Diesel,Manual,SUV,Mid,2017,,1956,2499000,INR,true
+Citroen,C3,Live,Petrol,Manual,Hatchback,Compact,2022,,1199,649000,INR,true
+Mahindra,XUV700,MX,Petrol,Manual,SUV,Mid,2021,,1997,1399000,INR,true
+Mahindra,Scorpio-N,Z4,Diesel,Manual,SUV,Mid,2022,,2184,1499000,INR,true
+BMW,3 Series,320d,Diesel,Automatic,Sedan,Luxury,2019,,1995,5290000,INR,true
+Mercedes-Benz,C-Class,C200,Petrol,Automatic,Sedan,Luxury,2021,,1496,6100000,INR,true
+Audi,A4,Premium,Petrol,Automatic,Sedan,Luxury,2020,,1984,4699000,INR,true

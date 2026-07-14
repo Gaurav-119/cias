@@ -1,0 +1,136 @@
+# Claim Nova — Docker Compose
+#
+# Default (lean, ~2–3 GB less on disk — no AI / PyTorch image):
+#   docker compose up -d
+#
+# With AI damage detection + OCR (~3–5 GB extra for PyTorch CPU image):
+#   docker compose --profile ai up -d
+#
+# Rebuild only when code/requirements change (NOT every start):
+#   docker compose build api web-user
+#   docker compose --profile ai build ai
+#
+# Free C: drive Docker cache (safe — keeps named volumes / DB data):
+#   powershell -File scripts/cleanup-docker-disk.ps1
+#
+# Portals: user :8080 | admin :8081 | verifier :8082 | agent :8083
+
+x-web-image: &web-image
+  image: cias-web:latest
+  build:
+    context: ./frontend
+    args:
+      VITE_API_URL: http://localhost:5000
+      VITE_STRIPE_PUBLISHABLE_KEY: ${VITE_STRIPE_PUBLISHABLE_KEY:-}
+  environment:
+    VITE_STRIPE_PUBLISHABLE_KEY: ${VITE_STRIPE_PUBLISHABLE_KEY:-}
+  depends_on:
+    - api
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cias
+      POSTGRES_PASSWORD: cias
+      POSTGRES_DB: cias
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cias"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    volumes:
+      - miniodata:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ai:
+    profiles: ["ai"]
+    build: ./ai-service
+    environment:
+      YOLO_MODEL_PATH: models/yolo11n-seg.pt
+      YOLO_FALLBACK_PATH: models/yolov8n.pt
+      CONF_THRESHOLD: "0.5"
+      AI_API_KEY: ${AI_API_KEY:-claimnova_2026}
+    volumes:
+      - ./ai-service/models:/app/models
+    ports:
+      - "8000:8000"
+
+  api:
+    build: ./BackEnd
+    depends_on:
+      db:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgresql+psycopg2://cias:cias@db:5432/cias
+      SECRET_KEY: ${SECRET_KEY:-change-me}
+      JWT_SECRET: ${JWT_SECRET:-change-me-jwt}
+      AUTO_CREATE_TABLES: "true"
+      CORS_ORIGINS: "http://localhost:8080,http://localhost:8081,http://localhost:8082,http://localhost:8083,http://localhost:5173,http://localhost"
+      STORAGE_PROVIDER: minio
+      STORAGE_BUCKET: cias-media
+      MINIO_ENDPOINT: minio:9000
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      MINIO_SECURE: "false"
+      MINIO_PUBLIC_ENDPOINT: http://localhost:9000
+      AI_SERVICE_URL: ${AI_SERVICE_URL:-http://host.docker.internal:8000}
+      AI_API_KEY: ${AI_API_KEY:-claimnova_2026}
+      AI_PREDICT_TIMEOUT: ${AI_PREDICT_TIMEOUT:-120}
+      PAYMENT_MODE: ${PAYMENT_MODE:-stripe}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+    ports:
+      - "5000:5000"
+
+  web-user:
+    <<: *web-image
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend/nginx/user.conf:/etc/nginx/conf.d/default.conf:ro
+
+  web-admin:
+    <<: *web-image
+    ports:
+      - "8081:80"
+    volumes:
+      - ./frontend/nginx/admin.conf:/etc/nginx/conf.d/default.conf:ro
+
+  web-verifier:
+    <<: *web-image
+    ports:
+      - "8082:80"
+    volumes:
+      - ./frontend/nginx/verifier.conf:/etc/nginx/conf.d/default.conf:ro
+
+  web-agent:
+    <<: *web-image
+    ports:
+      - "8083:80"
+    volumes:
+      - ./frontend/nginx/agent.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  pgdata:
+  miniodata:

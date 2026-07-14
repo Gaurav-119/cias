@@ -1,0 +1,16 @@
+# API
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+python-dotenv==1.0.1
+requests==2.32.3
+
+# Image / CV (damage heuristics + OCR preprocessing)
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+scikit-image==0.24.0
+Pillow==10.4.0
+
+# ML inference (CPU wheels installed in Dockerfile before these)
+ultralytics==8.3.0
+easyocr==1.7.2
