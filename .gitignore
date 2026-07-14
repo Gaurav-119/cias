@@ -49,9 +49,9 @@ ai-service/models/*.pth
 ai-service/models/*.onnx
 !ai-service/models/.gitkeep
 
-# Legacy / reference stacks (not part of active app)
-src/
-blockchain/
+# Legacy / reference stacks at repo root only (not frontend/src)
+/src/
+/blockchain/
 
 # OS & editor
 .DS_Store
