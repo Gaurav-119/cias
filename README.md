@@ -48,7 +48,7 @@ CIAS/
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/cias.git
+git clone https://github.com/Gaurav-119/cias.git
 cd cias
 
 # 2. Environment (optional — defaults work for local demo)
